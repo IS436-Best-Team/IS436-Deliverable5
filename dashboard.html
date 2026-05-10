@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">Coach & Admin Home</span>
+        <h1>Run the season with cleaner roster, game, and report data.</h1>
+        <p>Use this dashboard to jump into the five main screens: login, team add, team manage, admin users, and reports. The game tracker and AI query pages are included to match the project use cases.</p>
+        <div class="hero-actions">
+          <a class="btn gold" href="team-add.html">Add Team</a>
+          <a class="btn light" href="games.html">Create Game</a>
+          <a class="btn light" href="reports.html">View Reports</a>
+        </div>
+      </section>
+
+      <section class="grid four" id="dashboardStats" aria-label="Dashboard statistics"></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Fast actions</h2>
+          <p>Most common tasks for a coach or league administrator.</p>
+        </div>
+      </div>
+      <section class="grid three">
+        <article class="card feature">
+          <div class="icon-tile">➕</div>
+          <h3>Add a team and roster</h3>
+          <p>Create a team record and add jersey-only roster rows. The Player table stores jersey number, default status, and active status only.</p>
+          <a class="btn primary" href="team-add.html">Open Team Add</a>
+        </article>
+        <article class="card feature">
+          <div class="icon-tile">🧾</div>
+          <h3>Manage jersey records</h3>
+          <p>Update jersey numbers, active status, and color-coded status indicators. Duplicate jerseys are blocked inside the same team.</p>
+          <a class="btn primary" href="team-manage.html">Open Team Manage</a>
+        </article>
+        <article class="card feature">
+          <div class="icon-tile">📊</div>
+          <h3>Display reports</h3>
+          <p>Show the entered data back to the user now. SQL report buttons are included as placeholders for the future database connection.</p>
+          <a class="btn primary" href="reports.html">Open Reports</a>
+        </article>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Roster snapshot</h2>
+          <p>Quick view of current jersey status colors. No player names are shown.</p>
+        </div>
+      </div>
+      <section class="grid three" id="dashboardRoster"></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Recent games</h2>
+          <p>Local report data entered through the game tracker.</p>
+        </div>
+      </div>
+      <section id="recentGames"></section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

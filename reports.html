@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Reports</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="reports">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">Reports Screen</span>
+        <h1>Display team and game data back to the user.</h1>
+        <p>Form/report requirement using localStorage for the prototype. Reports use jersey-only player identifiers and include SQL placeholder buttons for the future database connection.</p>
+      </section>
+
+      <section class="form-card">
+        <div class="form-grid">
+          <div class="field"><label for="reportTeamId">Team Filter</label><select class="control" id="reportTeamId"></select></div>
+          <div class="field"><label for="reportGameId">Game Filter</label><select class="control" id="reportGameId"><option value="">All games</option></select></div>
+        </div>
+        <br>
+        <div class="inline-actions">
+          <button class="btn primary" type="button" data-placeholder-report>Generate Player Report from SQL</button>
+          <button class="btn gold" type="button" data-placeholder-report>Generate Game Report from SQL</button>
+          <button class="btn ghost" type="button" data-placeholder-report>Export CSV Placeholder</button>
+          <button class="btn ghost" type="button" onclick="window.print()">Print Current Page</button>
+        </div>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Report summary</h2>
+          <p>Counts calculated from locally entered prototype records.</p>
+        </div>
+      </div>
+      <section class="grid four" id="reportSummary"></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Player report</h2>
+          <p>Jersey-level roster, playtime, fouls, injuries, and participation status.</p>
+        </div>
+      </div>
+      <section id="playerReportTable"></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Game report</h2>
+          <p>Jersey-level stats for completed games.</p>
+        </div>
+      </div>
+      <section id="gameReportTable"></section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

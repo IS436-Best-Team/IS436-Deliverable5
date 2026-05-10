@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | AI Query</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="ai-query">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">AI Query Placeholder</span>
+        <h1>Ask natural-language questions about local game data.</h1>
+        <p>This page is a front-end placeholder for the AI-assisted query use case. It records the question in <span class="code">AIQuery</span> and returns a safe prototype summary until SQL/API integration is added.</p>
+      </section>
+
+      <div class="grid two">
+        <form id="aiQueryForm" class="form-card">
+          <h2>Submit AI query</h2>
+          <div class="form-grid">
+            <div class="field"><label for="aiTeamId">Team Scope</label><select class="control" id="aiTeamId" name="team_id" required></select></div>
+            <div class="field"><label for="aiGameId">Game Scope</label><select class="control" id="aiGameId" name="game_id"><option value="">All games</option></select></div>
+            <div class="field"><label for="query_type">Query Type</label><select class="control" id="query_type" name="query_type"><option value="general">General</option><option value="playtime">Playtime Compliance</option><option value="foul">Foul Review</option><option value="injury">Injury/Unavailable Review</option><option value="report">Report Summary</option></select></div>
+            <div class="field full">
+              <label for="query_text">Question</label>
+              <textarea class="control" id="query_text" name="query_text" required placeholder="Example: Which jersey numbers still need minutes before the next substitution?"></textarea>
+            </div>
+          </div>
+          <br>
+          <button class="btn primary" type="submit">Submit Query</button>
+          <button class="btn ghost" type="button" data-placeholder-report>Connect AI Service Placeholder</button>
+        </form>
+        <aside class="card feature">
+          <div class="icon-tile">🤖</div>
+          <h2>Planned future behavior</h2>
+          <ul class="check-list">
+            <li>Send the user's question to an approved AI service.</li>
+            <li>Attach only the relevant SQL report data.</li>
+            <li>Return an answer that cites the game or jersey records used.</li>
+            <li>Save the query in the <span class="code">AIQuery</span> table.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="section-title">
+        <div>
+          <h2>Response</h2>
+          <p>Prototype response is displayed here.</p>
+        </div>
+      </div>
+      <section id="aiResponse"><div class="empty-state">No query submitted yet.</div></section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | User Guide</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="user-guide">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">Documentation</span>
+        <h1>User guide and interface standards.</h1>
+        <p>This page is written for the instructor deliverable. It explains the five major screens, how the prototype stores data, and which interface decisions are being followed.</p>
+      </section>
+
+      <section class="grid two">
+        <article class="card feature">
+          <h2>Demo login accounts</h2>
+          <p><strong>Coach:</strong> coach@example.com / coach123</p>
+          <p><strong>Admin:</strong> admin@example.com / admin123</p>
+          <p class="hint">These are local prototype accounts only. Use real authentication when the SQL backend is connected.</p>
+          <button class="btn ghost" id="resetDemoData" type="button">Reset Demo Data</button>
+        </article>
+        <article class="card feature">
+          <h2>Data storage</h2>
+          <p>For this prototype, records are saved in browser localStorage using lower snake-case table-like keys. The included file <span class="code">data/schema.sql</span> shows the matching ERD-style SQL table design.</p>
+          <p>SQL tables used: <span class="code">League</span>, <span class="code">Team</span>, <span class="code">Player</span>, <span class="code">CoachUser</span>, <span class="code">TeamCoach</span>, <span class="code">Game</span>, <span class="code">GameRoster</span>, <span class="code">PlayerGameStatus</span>, <span class="code">Foul</span>, <span class="code">Injury</span>, <span class="code">Substitution</span>, <span class="code">AIQuery</span>, and <span class="code">Report</span>. LocalStorage uses matching lower snake-case keys such as <span class="code">lgmis_players</span> and <span class="code">lgmis_player_game_statuses</span>.</p>
+        </article>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Five important prototype screens</h2>
+          <p>These are the core UI screens/forms/reports for the class requirement.</p>
+        </div>
+      </div>
+      <section class="grid three">
+        <article class="card"><h3>1. Login</h3><p>Coach and admin users sign in. Navigation changes based on role.</p><a href="index.html" class="btn ghost">Open</a></article>
+        <article class="card"><h3>2. Team Add</h3><p>Coach creates a team and enters jersey-only roster records in one form.</p><a href="team-add.html" class="btn ghost">Open</a></article>
+        <article class="card"><h3>3. Team Manage</h3><p>Coach edits jersey number, default status, active status, and game status summary.</p><a href="team-manage.html" class="btn ghost">Open</a></article>
+        <article class="card"><h3>4. Admin Users</h3><p>League admin adds and deletes coach/admin users.</p><a href="admin-users.html" class="btn ghost">Open</a></article>
+        <article class="card"><h3>5. Reports</h3><p>Displays jersey-level player and game data back to the user and includes SQL placeholder buttons.</p><a href="reports.html" class="btn ghost">Open</a></article>
+        <article class="card"><h3>Extra: Contact</h3><p>League info, team name, team member bios, roles, and meeting time.</p><a href="contact.html" class="btn ghost">Open</a></article>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>User steps</h2>
+          <p>How a coach or admin should use the prototype during the demonstration.</p>
+        </div>
+      </div>
+      <section class="timeline">
+        <div class="timeline-item"><strong>Step 1:</strong> Login with a coach or admin demo account.</div>
+        <div class="timeline-item"><strong>Step 2:</strong> Coach adds a team and jersey-only roster using Team Add.</div>
+        <div class="timeline-item"><strong>Step 3:</strong> Coach manages jersey status in Team Manage using the color-coded indicators.</div>
+        <div class="timeline-item"><strong>Step 4:</strong> Coach creates a game record and enters game stats on Game Tracker.</div>
+        <div class="timeline-item"><strong>Step 5:</strong> Coach or admin views the player and game reports. SQL buttons stay as placeholders until database integration.</div>
+        <div class="timeline-item"><strong>Step 6:</strong> Admin logs in to add or delete adult coach/admin users and assign users to teams.</div>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Interface standards and design decisions</h2>
+          <p>These standards keep the site consistent, easy to grade, and usable by non-technical coaches.</p>
+        </div>
+      </div>
+      <section class="grid two">
+        <article class="card feature">
+          <h3>Visual standards</h3>
+          <ul class="check-list">
+            <li>Maryland theme using red, black, gold, and white.</li>
+            <li>Large buttons, rounded cards, and high contrast text for game-day use.</li>
+            <li>Consistent top navigation across all screens.</li>
+            <li>Responsive layout for laptop, tablet, and phone demonstrations.</li>
+          </ul>
+        </article>
+        <article class="card feature">
+          <h3>Status standards</h3>
+          <ul class="check-list">
+            <li>Red: jersey record needs time or needs monitoring.</li>
+            <li>Green: jersey record is eligible or has met the playtime requirement.</li>
+            <li>Blue: jersey record has an injury status.</li>
+            <li>Gray: jersey record is unavailable, inactive, or disqualified.</li>
+          </ul>
+        </article>
+        <article class="card feature">
+          <h3>Data standards</h3>
+          <ul class="check-list">
+            <li>Players are identified by jersey number only.</li>
+            <li>Player names, initials, and other minor-identifying information are not collected.</li>
+            <li>Jersey number is unique within a team, but can repeat across different teams.</li>
+            <li>Forms use field names that match the SQL schema.</li>
+            <li>Future SQL connection should replace localStorage, not the UI layout.</li>
+          </ul>
+        </article>
+        <article class="card feature">
+          <h3>Security and privacy standards</h3>
+          <ul class="check-list">
+            <li>Role-based screens for coach, assistant coach, and league admin.</li>
+            <li>Adult coach/admin accounts can use names; roster players cannot.</li>
+            <li>Future backend should use encrypted transmission and hashed passwords.</li>
+            <li>Admin-only user management.</li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Image replacement list</h2>
+          <p>These files already exist as placeholders in <span class="code">assets/images</span>. Replace them with real images using the same file names.</p>
+        </div>
+      </div>
+      <section class="table-wrap">
+        <table>
+          <thead><tr><th>File name</th><th>Use</th><th>What the picture should be</th></tr></thead>
+          <tbody>
+            <tr><td><span class="code">hero-court.jpg</span></td><td>Login and main hero image</td><td>Basketball court, gym, or clean game-day background. Avoid close-up minor faces.</td></tr>
+            <tr><td><span class="code">perry-hall-rec.jpg</span></td><td>Contact page</td><td>Perry Hall Recreation Office, Honeygo Run Community Center, or an approved exterior recreation photo.</td></tr>
+            <tr><td><span class="code">team-huddle.jpg</span></td><td>Team Add page</td><td>Coach clipboard, empty bench, basketball equipment, or team warmup from behind/far away. Avoid identifiable minors.</td></tr>
+            <tr><td><span class="code">basketball-court.jpg</span></td><td>Game Tracker page</td><td>Basketball court, scoreboard, or generic gym photo.</td></tr>
+            <tr><td><span class="code">maryland-flag.png</span></td><td>Optional brand accent</td><td>Maryland flag or Maryland flag pattern.</td></tr>
+            <tr><td><span class="code">basketball-icon.png</span></td><td>Logo mark</td><td>Simple basketball icon or LGMIS logo.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

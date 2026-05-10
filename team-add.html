@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Add Team</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="team-add">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero" style="background-image:linear-gradient(135deg,rgba(17,17,20,.94),rgba(123,16,37,.90)),url('assets/images/team-huddle.jpg')">
+        <span class="eyebrow">Coach Form</span>
+        <h1>Add a team and jersey-only roster.</h1>
+        <p>This form stores records in the ERD-style <span class="code">Team</span>, <span class="code">TeamCoach</span>, and <span class="code">Player</span> tables. Player records use jersey number only for roster privacy.</p>
+      </section>
+
+      <form id="teamAddForm" class="form-card">
+        <div class="section-title" style="margin-top:0">
+          <div>
+            <h2>Team information</h2>
+            <p>The league rules come from the seeded <span class="code">League</span> table. The current signed-in coach is linked through <span class="code">TeamCoach</span>.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="league_id">League</label>
+            <select class="control" id="league_id" name="league_id" required></select>
+          </div>
+          <div class="field">
+            <label for="team_name">Team Name</label>
+            <input class="control" id="team_name" name="team_name" required placeholder="Perry Hall Panthers">
+          </div>
+          <div class="field">
+            <label for="is_active">Team Active?</label>
+            <select class="control" id="is_active" name="is_active">
+              <option value="1">Active</option>
+              <option value="0">Inactive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="alert warn" style="margin-top:1rem">
+          <strong>Roster privacy rule:</strong> do not enter player names. Each roster row stores only <span class="code">team_id</span>, <span class="code">jersey_number</span>, <span class="code">default_status</span>, and <span class="code">is_active</span>.
+        </div>
+
+        <div class="section-title">
+          <div>
+            <h2>Jersey roster rows</h2>
+            <p>Enter jersey numbers only. Blank roster slots are ignored. Duplicate jersey numbers inside this team are blocked. Another team can still use the same jersey number.</p>
+          </div>
+        </div>
+        <div class="grid two" id="playerRows"></div>
+        <br>
+        <div class="inline-actions">
+          <button class="btn primary" type="submit">Save Team and Jersey Records</button>
+          <a class="btn ghost" href="team-manage.html">Go to Team Manage</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

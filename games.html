@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Game Tracker</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="games">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero" style="background-image:linear-gradient(135deg,rgba(17,17,20,.94),rgba(123,16,37,.90)),url('assets/images/basketball-court.jpg')">
+        <span class="eyebrow">Create New Game</span>
+        <h1>Enter game details and record jersey-level stats.</h1>
+        <p>The game tracker saves <span class="code">Game</span>, <span class="code">GameRoster</span>, <span class="code">PlayerGameStatus</span>, <span class="code">Foul</span>, and <span class="code">Injury</span> records. Roster players are shown only as jersey numbers.</p>
+      </section>
+
+      <form id="gameForm" class="form-card">
+        <div class="section-title" style="margin-top:0">
+          <div>
+            <h2>Game setup</h2>
+            <p>Select the team first to load league rules and jersey roster rows.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label for="gameTeamId">Team</label><select class="control" id="gameTeamId" name="team_id" required></select></div>
+          <div class="field"><label for="opponent_name">Opponent</label><input class="control" id="opponent_name" name="opponent_name" required placeholder="White Marsh Wildcats"></div>
+          <div class="field"><label for="gameDate">Game Date</label><input class="control" id="gameDate" name="game_date" type="date" required></div>
+          <div class="field"><label for="location">Location</label><input class="control" id="location" name="location" placeholder="Honeygo Run Community Center"></div>
+          <div class="field"><label for="status">Game Status</label><select class="control" id="status" name="status"><option value="completed">Completed</option><option value="scheduled">Scheduled</option><option value="cancelled">Cancelled</option></select></div>
+        </div>
+
+        <div class="section-title">
+          <div>
+            <h2>League rule snapshot</h2>
+            <p>These values come from the selected team&apos;s League record.</p>
+          </div>
+        </div>
+        <section id="leagueRulesSnapshot"></section>
+
+        <div class="section-title">
+          <div>
+            <h2>Jersey game rows</h2>
+            <p>Record presence, minutes, fouls, status, disqualification, unavailability, and injury notes for each jersey record.</p>
+          </div>
+          <button class="btn ghost" id="quickMinutes" type="button">Fill Demo Stats</button>
+        </div>
+        <section id="gamePlayers"></section>
+        <br>
+        <div class="inline-actions">
+          <button class="btn primary" type="submit">Save Game Record</button>
+          <button class="btn ghost" type="button" data-placeholder-report>Upload to SQL Placeholder</button>
+          <a class="btn ghost" href="reports.html">View Reports</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

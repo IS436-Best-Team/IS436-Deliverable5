@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Manage Team</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="team-manage">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">Coach Screen</span>
+        <h1>Manage jersey-only roster records.</h1>
+        <p>Roster players are identified by jersey number only. The same jersey number can exist on different teams, but one team cannot have the same jersey number twice.</p>
+      </section>
+
+      <section class="form-card">
+        <div class="form-grid">
+          <div class="field">
+            <label for="manageTeamSelect">Select Team</label>
+            <select class="control" id="manageTeamSelect"></select>
+          </div>
+          <div class="field">
+            <label>Selected Team</label>
+            <div class="control" id="selectedTeamName" aria-live="polite">Choose a team</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Roster management</h2>
+          <p>Edits save directly to the browser prototype database. No roster player names are stored or displayed.</p>
+        </div>
+      </div>
+      <section id="manageRoster"></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Add jersey record to selected team</h2>
+          <p>Jersey number is the only on-court player identifier. The system checks uniqueness inside the selected team.</p>
+        </div>
+      </div>
+      <form id="addPlayerForm" class="form-card">
+        <input type="hidden" id="addPlayerTeamId" name="team_id">
+        <div class="form-grid">
+          <div class="field"><label for="jersey_number">Jersey #</label><input class="control" id="jersey_number" name="jersey_number" required placeholder="42"></div>
+          <div class="field"><label for="default_status">Default Status</label><select class="control" id="default_status" name="default_status"><option value="eligible">Eligible</option><option value="needs_time">Needs Time</option><option value="requirement_met">Requirement Met</option><option value="injured">Injured</option><option value="unavailable">Unavailable</option></select></div>
+          <div class="field"><label for="is_active">Active?</label><select class="control" id="is_active" name="is_active"><option value="1">Active</option><option value="0">Inactive</option></select></div>
+        </div>
+        <br>
+        <button class="btn primary" type="submit">Add Jersey Record</button>
+      </form>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

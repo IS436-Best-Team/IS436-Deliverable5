@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" class="login-shell">
+    <section class="login-info" aria-label="Project introduction">
+      <div>
+        <span class="eyebrow">IS 436 · Best Team</span>
+        <h1>League Game Management & Analytics</h1>
+        <p>Perry Hall Recreation basketball coaches and league administrators. The pages store prototype records in browser localStorage now and are ready to connect to SQL later.</p>
+        <div class="hero-actions">
+          <a class="btn gold" href="contact.html">League & Team Contact</a>
+          <a class="btn light" href="user-guide.html">User Guide</a>
+        </div>
+      </div>
+    </section>
+    <section class="login-panel" aria-label="Login panel">
+      <div class="login-panel-inner">
+        <div class="login-logo">
+          <img src="assets/images/basketball-icon.png" alt="Basketball icon">
+          <div>
+            <div class="brand-title">Perry Hall LGMIS</div>
+            <div class="brand-subtitle">Coach/Admin Login</div>
+          </div>
+        </div>
+        <form id="loginForm" class="form-card">
+          <div class="field">
+            <label for="email">Email</label>
+            <input class="control" id="email" name="email" type="email" autocomplete="email" required placeholder="coach@example.com">
+          </div>
+          <br>
+          <div class="field">
+            <label for="password">Password</label>
+            <input class="control" id="password" name="password" type="password" autocomplete="current-password" required placeholder="coach123">
+          </div>
+          <br>
+          <button class="btn primary" type="submit" style="width:100%">Login</button>
+          <div class="demo-logins">
+            <button class="btn ghost" type="button" data-demo-login="coach">Demo Coach</button>
+            <button class="btn ghost" type="button" data-demo-login="admin">Demo Admin</button>
+          </div>
+          <p class="hint">Prototype credentials: coach@example.com / coach123, admin@example.com / admin123.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

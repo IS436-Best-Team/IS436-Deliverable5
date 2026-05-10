@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perry Hall LGMIS | Admin Users</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="admin-users">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="app-header"></header>
+  <main id="main">
+    <div class="container">
+      <section class="page-hero">
+        <span class="eyebrow">Admin Screen</span>
+        <h1>Add, assign, and delete coach/admin users.</h1>
+        <p>This page demonstrates role-based access control for league administrators. User names on this page are adult account holder names only.</p>
+      </section>
+
+      <div class="grid two">
+        <form id="userForm" class="form-card">
+          <h2>Add user</h2>
+          <div class="form-grid">
+            <div class="field"><label for="first_name">User First Name</label><input class="control" id="first_name" name="first_name" required placeholder="Coach"></div>
+            <div class="field"><label for="last_name">User Last Name</label><input class="control" id="last_name" name="last_name" required placeholder="Name"></div>
+            <div class="field"><label for="email">Email</label><input class="control" id="email" name="email" type="email" required placeholder="user@email.com"></div>
+            <div class="field"><label for="role">Role</label><select class="control" id="role" name="role"><option value="coach">Coach</option><option value="assistant_coach">Assistant Coach</option><option value="admin">League Admin</option></select></div>
+            <div class="field"><label for="userTeamId">Team Assignment</label><select class="control" id="userTeamId" name="team_id"></select></div>
+            <div class="field"><label for="password_hash">Temporary Password</label><input class="control" id="password_hash" name="password_hash" required placeholder="temporary123"></div>
+            <div class="field"><label for="is_active">Active?</label><select class="control" id="is_active" name="is_active"><option value="1">Active</option><option value="0">Inactive</option></select></div>
+          </div>
+          <br>
+          <button class="btn primary" type="submit">Add User</button>
+        </form>
+
+        <aside class="card feature">
+          <div class="icon-tile">🔐</div>
+          <h2>Admin notes</h2>
+          <p><strong>Coach:</strong> can create and manage teams, enter game records, and view reports.</p>
+          <p><strong>Assistant Coach:</strong> can access coach screens for the assigned team in the prototype.</p>
+          <p><strong>League Admin:</strong> can add/delete users and see all teams and reports.</p>
+          <div class="alert warn">Do not use real passwords in this classroom prototype. SQL/server auth should hash passwords later.</div>
+        </aside>
+      </div>
+
+      <div class="section-title">
+        <div>
+          <h2>Current users</h2>
+          <p>Admin can delete users from the local prototype CoachUser table.</p>
+        </div>
+      </div>
+      <section id="usersTable"></section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
