@@ -779,7 +779,7 @@
         const player = playerById(s.player_id);
         const roster = rosterRows.find(r => r.game_id === s.game_id && r.player_id === s.player_id) || {};
         const injuryNotes = injuries.filter(i => i.game_id === s.game_id && i.player_id === s.player_id).map(i => i.notes).join('; ');
-        return `<tr><td>${safe(game.game_date || '')} vs ${safe(game.opponent_name || '')}</td><td>#${safe(player.jersey_number || '')}</td><td>${safe(boolText(roster.is_present))}</td><td>${safe(s.minutes_played)}</td><td>${safe(s.foul_count)}</td><td>${statusPill(s.current_status, s.status_color)}</td><td>${safe(injuryNotes)}</td></tr>`;
+        return `<tr><td>${safe(game.game_date || '')} ${safe(game.opponent_name || '')} vs </td><td>#${safe(player.jersey_number || '')}</td><td>${safe(boolText(roster.is_present))}</td><td>${safe(s.minutes_played)}</td><td>${safe(s.foul_count)}</td><td>${statusPill(s.current_status, s.status_color)}</td><td>${safe(injuryNotes)}</td></tr>`;
       }).join('')}</tbody></table></div>` : '<div class="empty-state">No game status rows match this report.</div>';
     }
   }
