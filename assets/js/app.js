@@ -325,7 +325,7 @@
     const visibleTeamIds = visibleTeamsForUser().map(t => t.team_id);
     const games = getTable('games').filter(g => visibleTeamIds.includes(g.team_id) && (!teamId || g.team_id === teamId));
     select.innerHTML = includeBlank ? '<option value="">All games</option>' : '';
-    games.forEach(g => select.insertAdjacentHTML('beforeend', `<option value="${safe(g.game_id)}">${safe(g.game_date)} vs ${safe(g.opponent_name)}</option>`));
+    games.forEach(g => select.insertAdjacentHTML('beforeend', `<option value="${safe(g.game_id)}">${safe(g.game_date)} ${safe(g.opponent_name)} vs  </option>`));
   }
 
   function jerseyExistsOnTeam(teamId, jerseyNumber, ignorePlayerId=''){
