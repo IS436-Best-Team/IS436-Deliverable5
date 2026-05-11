@@ -149,8 +149,8 @@
     ]);
 
     const jerseyRows = [
-      ['4','eligible','1'], ['7','needs_time','1'], ['11','eligible','1'], ['12','requirement_met','1'],
-      ['15','eligible','1'], ['20','injured','1'], ['22','eligible','1'], ['42','unavailable','1']
+      ['1','eligible','1'], ['2','needs_time','1'], ['4','eligible','1'], ['08','requirement_met','1'],
+      ['16','eligible','1'], ['32','injured','1'], ['64','eligible','1'], ['42','unavailable','1']
     ];
     const players = jerseyRows.map((row, i) => ({
       player_id:`player_demo_${i+1}`,
